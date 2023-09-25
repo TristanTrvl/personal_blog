@@ -1,0 +1,19 @@
+---
+import { collectionEntry } from "astro:content";
+
+export interface Props {
+	content: collectionEntry<"blog">;
+}
+
+const { content } = Astro.props;
+---
+
+<article>
+	<a href="/blog/" title="Back to blog">&larr; Back to blog</a>
+	<p>
+		Published on {content.pubDate} by {content.author}
+	</p>
+	<slot />
+	<p>Written by {content.author}</p>
+	<a href="/blog/" title="Back to blog">&larr; Back to blog</a>
+</article>

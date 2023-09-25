@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import BlogSummaryCard from "./BlogSummaryCard.astro";
+
+export interface Props {
+	posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul>
+	{
+		posts.map((post) => {
+			return (
+				<li>
+					<BlogSummaryCard post={post} />
+				</li>
+			);
+		})
+	}
+</ul>

@@ -1,0 +1,23 @@
+---
+interface Props {
+	items: {
+		name: string;
+		url: string;
+	}[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav>
+  <h2 class="hidden">Navigation</h2>
+  <ul class="flex gap-8 poppins">
+    {
+      items.map((item) => (
+        <li>
+          <a href={item.url} title={`Go to ${item.name}`}> {item.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
