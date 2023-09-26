@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Default.astro";
 import BlogList from "@components/blog/BlogList.astro";
+import BlogSideBar from "@components/blog/BlogSideBar.astro";
 
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
@@ -47,15 +48,11 @@ const { tag, blogposts } = Astro.props;
 	pageTitle={`Tristan Thoraval | Blogposts tagged with ${tag}`}
 >
 	<main class="main-grid">
-		<aside class="laside">
-      <nav basics-sidenote="">
-        <a basics-link="" href="/blog">
-        <div>
-          <span basics-text=""><em>&larr;Back to blog</em></span>
-        </div>
-        </a>
-      </nav>
-		</aside>
-		<BlogList posts={blogposts} />
+		<BlogSideBar />
+    <section>
+      <h2>Blog</h2>
+      <p>Blogposts tagged with {tag}</p>
+      <BlogList posts={blogposts} />
+    </section>
 	</main>
 </Layout>

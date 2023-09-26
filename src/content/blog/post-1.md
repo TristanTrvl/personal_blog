@@ -1,6 +1,6 @@
 ---
-title: 🎉 Initial commit
-pubDate: '2023-09-25'
+title: Initial commit 🎉
+pubDate: 2023-09-25
 description: 'This is the first post of my new Astro blog.'
 author: 'Tristan Thoraval'
 layout: '../../layouts/BlogPost.astro'

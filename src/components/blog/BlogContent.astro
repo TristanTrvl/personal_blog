@@ -6,10 +6,19 @@ export interface Props {
 }
 
 const { content } = Astro.props;
+const date = new Date(content.pubDate)
 ---
 
-<article>
+<article class="flow">
 	<h2>{content.title}</h2>
-	<date>{content.pubDate}</p>
+	<time datetime={date.toISOString()}>
+    {
+        date.toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        })
+    }
+</time>
 	<slot />
 </article>

@@ -1,5 +1,4 @@
 ---
-import SummaryCard from "@components/generic/SummaryCard.astro";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -9,12 +8,10 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<SummaryCard
-	title={post.data.title}
-	imgAlt={post.data.title}
-	imgSrc={post.data.imgUrl}
-	description={post.data.description}
->
+<article class="card flow">
+	<h3>{post.data.title}</h3>
+	<p class="truncate">{post.data.description}</p>
+
 	<div>
 		<a href={`/blog/${post.slug}/`}>Read post &rarr;</a>
 	</div>
@@ -35,13 +32,6 @@ const { post } = Astro.props;
 					})
 				}
 			</ul>
-			{
-				post.data.draft && (
-					<span>
-						Draft
-					</span>
-				)
-			}
 		</div>
 	</div>
-</SummaryCard>
+</article>

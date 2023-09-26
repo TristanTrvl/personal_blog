@@ -1,0 +1,29 @@
+---
+import BlogSideBar from "@components/blog/BlogSideBar.astro";
+
+export interface Props {
+	headings: object[];
+}
+
+const { headings } = Astro.props;
+---
+
+<BlogSideBar>
+		{ headings.length > 0 && (
+			<nav class="flow">
+				<h2>Sections :</h2>
+				<ul role='list' class="flow">
+					{
+						headings.map((heading: object) => (
+							<li>
+								{[...Array(heading.depth - 1)].map(() => (
+									<span/>
+								))}
+								<a href={`#${heading.slug ?? ""}`} >{heading.text}</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		)}
+</BlogSideBar>

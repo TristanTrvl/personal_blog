@@ -2,21 +2,22 @@
 import Navigation from "./Navigation.astro";
 import MobileNavigation from "./MobileNavigation.astro";
 
-const pageTitle = "Tristan Thoraval";
 const navigationItems = [
 	{ name: "About", url: "/" },
 	{ name: "Blog", url: "/blog/" },
 ];
+
+export interface Props {
+	pageTitle?: string;
+}
+
+const { pageTitle } = Astro.props;
 ---
 
 <header>
 	<div>
-		{pageTitle && <h1 class="sr-only">{pageTitle}</h1>}
-		<a href="/" title="Back to Home">
-			<p>Tristan Thoraval</p>
-		</a>
-
-		<Navigation items={navigationItems}/>
-		<MobileNavigation items={navigationItems}/>
+			{pageTitle && <h1 class="sr-only">{pageTitle}</h1>}
+			<a href="/" title="Back to Home">Tristan Thoraval</a>
+			<Navigation items={navigationItems}/>
 	</div>
 </header>

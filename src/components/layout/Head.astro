@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+
 export interface Props {
 	title: string;
 	description: string;
@@ -128,5 +129,5 @@ const { title, description, socialImg } = Astro.props;
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tristan Thoraval | {title}</title>
 
-	<ViewTransitions />	
+	<ViewTransitions fallback="swap">
 </head>
