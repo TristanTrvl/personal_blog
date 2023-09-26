@@ -10,7 +10,7 @@ export interface Props {
 const { posts } = Astro.props;
 ---
 
-<ul>
+<ul role='list'>
 	{
 		posts.map((post) => {
 			return (

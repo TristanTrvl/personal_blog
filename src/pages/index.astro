@@ -1,5 +1,14 @@
 ---
 import Layout from "@layouts/Default.astro";
+import BlogList from "@components/blog/BlogList.astro";
+
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog").then((collection) => {
+	return collection
+		.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+		.slice(0, 3);
+});
 ---
 
 <Layout
@@ -7,20 +16,33 @@ import Layout from "@layouts/Default.astro";
 	pageTitle="Tristan Thoraval"
 	description=""
 >
-	<main class="p-6 lg:grid lg:grid-cols-3 flex justify-center">
-		<p>Crafting interfaces. Building polished software and web experiences. Experimenting with magical details in user interfaces. </p>
-		<hr>
+	<main class="main-grid">
+		<div class="prose">
+				<p>Crafting interfaces. Building polished software and web experiences. Experimenting with magical details in user interfaces. </p>
+				<hr>
 
-		<section>
-			<h2>Now</h2>
-			<p>Developing skill through doing, guiltlessly exploring passion and interests, imbuing quality. Mindful that everything around me is someone’s life work.</p>
-			<p>All I want to do is build websites. Typography, motion design, copywriting, performance—the web is an endless medium of opportunity and creativity of which I’ve only scratched the surface.</p>
-			<p>Enjoying deep, dark, boring dance music: songs that set the pace in the first ten seconds and maintain it for the next ten minutes. Deep is a curation of my favorites. Soothed by the inherent energy of drum and bass—Drum has my favorites.</p>
-		</section>
+				<section>
+					<h2>Now</h2>
+					<p>Developing skill through doing, guiltlessly exploring passion and interests, imbuing quality. Mindful that everything around me is someone’s life work.</p>
+					<p>All I want to do is build websites. Typography, motion design, copywriting, performance—the web is an endless medium of opportunity and creativity of which I’ve only scratched the surface.</p>
+					<p>Enjoying deep, dark, boring dance music: songs that set the pace in the first ten seconds and maintain it for the next ten minutes. Deep is a curation of my favorites. Soothed by the inherent energy of drum and bass—Drum has my favorites.</p>
+				</section>
 
-		<section>
-			<h2>Contact</h2>
-			<p>Reach me at thoravaltristan@gmail.com.</p>
-		</section>
+				<section>
+					<h2>Recent Posts</h2>
+					<div class="hidden md:block">
+						<a href="/blog/">Go to blog &rarr;</a>
+					</div>
+					<div class="block md:hidden">
+						<a href="/blog/">to blog</a>
+					</div>
+					<BlogList posts={posts} />
+				</section>
+
+				<section>
+					<h2>Contact</h2>
+					<p>Reach me at <a href="mailto:thoravaltristan@gmail.com">thoravaltristan@gmail.com</a>.</p>
+				</section>
+		</div>
 	</main>
 </Layout>

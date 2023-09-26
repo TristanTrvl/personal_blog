@@ -4,18 +4,19 @@ import MobileNavigation from "./MobileNavigation.astro";
 
 const pageTitle = "Tristan Thoraval";
 const navigationItems = [
-	{ name: "Home", url: "/" },
-	{ name: "About", url: "/about/" },
+	{ name: "About", url: "/" },
 	{ name: "Blog", url: "/blog/" },
 ];
 ---
 
 <header>
-{pageTitle && <h1 class="hidden">{pageTitle}</h1>}
-	<a href="/" title="Back to Home">
-		<p class="righteous md:text-5xl">Tristan Thoraval</p>
-	</a>
+	<div>
+		{pageTitle && <h1 class="sr-only">{pageTitle}</h1>}
+		<a href="/" title="Back to Home">
+			<p>Tristan Thoraval</p>
+		</a>
 
-  <Navigation items={navigationItems}/>
-  <MobileNavigation items={navigationItems}/>
+		<Navigation items={navigationItems}/>
+		<MobileNavigation items={navigationItems}/>
+	</div>
 </header>

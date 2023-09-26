@@ -9,9 +9,9 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<nav>
-  <h2 class="hidden">Navigation</h2>
-  <ul class="flex gap-8 poppins">
+<nav class="hidden md:inline-block">
+  <h2 class="sr-only">Navigation</h2>
+  <ul role='list'>
     {
       items.map((item) => (
         <li>
