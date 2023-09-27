@@ -1,5 +1,5 @@
 ---
-title: Initial commit 🎉
+title: Creating my site in Astro 🎉
 pubDate: 2023-09-25
 description: 'This is the first post of my new Astro blog.'
 author: 'Tristan Thoraval'
@@ -10,13 +10,15 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-# Creating my site in Astro
+So, in about 1 month time I'm set to leave school to start my journey as a Full-stack Web developer. I'm so excited!
 
-So, in about 1 month time I will leave school to start my journey as a Full-stack Web developer at. I'm so excited! The internship is part of my school program, a part of the internship is keeping a blog with your findings and thoughts, so I decided to build my own blog with [Nuxt](https://nuxtjs.org) instead of a regular WordPress or something else. Nuxt was on my 'want to learn' list for a while, so I was very excited to finally try out the framework. I'm a huge fan of [Vue](https://vuejs.org) so it didn't seem very hard to learn and implement Nuxt. I was right.
+As part of the final test we are expected to build projects that will cover both front end and backend. In the case of the frontend I set myself to build a personal website and blog to follow me along my developer carrer.
+
+To do so is decided to use Astro instead of a regular WordPress or something else. Astro was on my 'want to learn' list for a while, so I was very excited to finally try out the framework. I'm pretty used to Javascript so it didn't seem very hard to learn and implement Astro. I was right.
 
 ## Setting up Astro
 
-setting up Astro was actually really easy. I just searched for the [official Astro documentation](https://nuxtjs.org/docs/2.x/get-started/installation), turns out to be a very good documented framework (not that I expected something else since i've been following the progress of astro for some time now).
+Setting up Astro was actually really easy. I just searched for the [official Astro documentation](https://nuxtjs.org/docs/2.x/get-started/installation), turns out to be a very good documented framework (not that I expected something else since i've been following the progress of astro for some time now).
 
 On the homepage of the Astro documentation there's a very simple guide that takes you trough the whole setup. It's just a few command since it uses the `create nuxt-app` command to setup the basic template app. From there I kind of figured the rest out by scrolling through the documentation.
 

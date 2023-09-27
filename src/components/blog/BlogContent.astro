@@ -1,4 +1,5 @@
 ---
+import Time from "../general/Time.astro";
 import { collectionEntry } from "astro:content";
 
 export interface Props {
@@ -9,16 +10,12 @@ const { content } = Astro.props;
 const date = new Date(content.pubDate)
 ---
 
-<article class="flow">
-	<h2>{content.title}</h2>
-	<time datetime={date.toISOString()}>
-    {
-        date.toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-        })
-    }
-</time>
-	<slot />
+<article>
+    <header>
+        <Time date={content.pubDate} />
+        <h1>{content.title}</h1>
+    </header>
+    <main class="flow">
+	    <slot />
+    </main>
 </article>

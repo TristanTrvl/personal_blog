@@ -1,4 +1,5 @@
 ---
+import Time from "../general/Time.astro";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -8,30 +9,12 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="card flow">
-	<h3>{post.data.title}</h3>
-	<p class="truncate">{post.data.description}</p>
-
-	<div>
-		<a href={`/blog/${post.slug}/`}>Read post &rarr;</a>
-	</div>
-
-	<div>
-		<p class="sr-only">tags:</p>
+<article class="card">
+	<div class="flex space-between">
 		<div>
-			<ul role='list'>
-				{
-					post.data.tags.map((tag) => {
-						return (
-							<li>
-								<a class="pill" href={`/blog/tags/${tag.toLowerCase()}/`}>
-									<span>{tag}</span>
-								</a>
-							</li>
-						);
-					})
-				}
-			</ul>
+			<Time date={post.data.pubDate} />
+			<h3 class="basic_text">{post.data.title}</h3>
 		</div>
+		<a href={`/blog/${post.slug}/`}>Read post &rarr;</a>
 	</div>
 </article>

@@ -15,7 +15,7 @@ const { title, description } = content;
 ---
 
 <Layout title={title} description={description} socialImg={socialImg}>
-	<main class="main-grid">
+	<main id="main" class="main-grid">
 		<BlogHeadingNav headings={headings} />
 		<BlogContent content={content}>
 			<slot />

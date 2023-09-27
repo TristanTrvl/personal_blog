@@ -19,8 +19,9 @@ const { title, description, classList, pageTitle, socialImg } = Astro.props;
 <html lang="en">
   <Head title={title} description={description} socialImg={socialImg} />
 	<body class:list={[classList]}>
+		<a class="skip-to-content-link" href="#main">Skip to content</a>
     <Header pageTitle={pageTitle} transition:persist />
 		<slot />
     <Footer transition:persist />
-	</body>
+	</body> 
 </html>

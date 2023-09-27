@@ -10,15 +10,12 @@ const { headings } = Astro.props;
 
 <BlogSideBar>
 		{ headings.length > 0 && (
-			<nav class="flow">
-				<h2>Sections :</h2>
-				<ul role='list' class="flow">
+			<nav>
+				<h2>Sections</h2>
+				<ul role='list'>
 					{
 						headings.map((heading: object) => (
 							<li>
-								{[...Array(heading.depth - 1)].map(() => (
-									<span/>
-								))}
 								<a href={`#${heading.slug ?? ""}`} >{heading.text}</a>
 							</li>
 						))

@@ -16,9 +16,11 @@ const posts = await getCollection("blog").then((collection) => {
 	description="Tristan Thoraval, Blog | On this page you can find a collection of my blogposts, related to web technologies and programming."
 	pageTitle="Blog | Tristan Thoraval"
 >
-	<main class="main-grid">
-    <h2>Blog</h2>
-    <p>This is where I post about my journey learning web development.</p>
-		<BlogList posts={posts} />
+	<main id="main" class="main-grid">
+		<div class="flow">
+			<h2>Blog</h2>
+			<p>This is where I post about my journey learning web development.</p>
+			<BlogList posts={posts} />
+		</div>
 	</main>
 </Layout>
