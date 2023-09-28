@@ -21,7 +21,7 @@ const { title, description, socialImg } = Astro.props;
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="generator" content={Astro.generator} />
 
-	<meta name="title" content={`Tristan Thoraval | ${title}`} />
+	<title>{title} | Tristan Thoraval</title>
 	<meta name="description" content={description} />
 
 	<meta property="og:type" content="website" />
@@ -116,8 +116,6 @@ const { title, description, socialImg } = Astro.props;
 	<meta name="theme-color" content="#ffffff" />
 	<meta name="theme-color" content="#6ee7b7" />
 
-	<title>Tristan Thoraval | {title}</title>
-
 	<ViewTransitions />
 
 	<slot />
@@ -127,7 +125,7 @@ const { title, description, socialImg } = Astro.props;
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tristan Thoraval | {title}</title>
+	<title>{title} | Tristan Thoraval</title>
 
 	<ViewTransitions fallback="swap">
 </head>

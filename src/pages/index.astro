@@ -20,23 +20,23 @@ const posts = await getCollection("blog").then((collection) => {
 		<div class="flow">
 				<p><em>Crafting interfaces</em>. Building polished software and web experiences. Experimenting with magical details in user interfaces. </p>
 
-				<section class="flow">
-					<h2>Now</h2>
+				<section class="flow" aria-labelledby="about">
+					<h2 id="about">Now</h2>
 					<p>Developing skills through doing, guiltlessly exploring passion and interests, imbuing quality. Mindful that I’ve only scratched the surface of what the web offers.</p>
 					<p>Today, I'm mainly focussed on Full-Stack development with a love for front-end and JavaScript.</p>
 					<p>Outside of programming, I enjoy photography, video games and bouldering.</p>
 				</section>
 
-				<section class="flow">
+				<section class="flow" aria-labelledby="blog">
 					<div class="flex space-between">
-						<h2>Latest posts</h2>
+						<h2 id="blog">Latest posts</h2>
 						<a href="/blog/">Go to blog &rarr;</a>
 					</div>
 					<BlogList posts={posts} />
 				</section>
 
-				<section>
-					<h2>Get in touch</h2>
+				<section class="flow" aria-labelledby="contact">
+					<h2 id="contact">Get in touch</h2>
 					<p>E-mail me at <a href="mailto:thoravaltristan@gmail.com" class="email"></a>.</p>
 				</section>
 		</div>

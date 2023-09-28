@@ -208,7 +208,7 @@ select {
   --page-width: 1072px;
   --content-width: 640px;
 
-  --header-height: 48px;
+  --header-height: 72px;
   --footer-height: 48px;
   --icon-primary: var(--mono11);
   --body-margin-left: max(24px, env(safe-area-inset-left));
@@ -384,11 +384,6 @@ footer > div {
   justify-content: space-between;
 }
 
-nav ul {
-  padding: 0;
-  margin: 0;
-}
-
 header nav ul {
   display: flex;
   gap: 1rem;
@@ -458,12 +453,12 @@ h1 {
 
 h2 {
   --space: var(--space-m);
-  font-size: var(--step-1);
+  font-size: var(--step-2);
 }
 
 h3 {
   --space: var(--space-xs);
-  font-size: var(--step-0);
+  font-size: var(--step-1);
 }
 
 p {
@@ -478,10 +473,25 @@ p {
 }
 
 section {
-  --space: var(--space-l);
+  --space: var(--space-xl);
 }
 
 /* COMPONENTS */
+
+.skip-to-content-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: var(--bg);
+  color: var(--fg);
+  opacity: 0;
+}
+.skip-to-content-link:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
 
 .title {
   font-size: var(--type-heading);
@@ -514,6 +524,10 @@ section {
   gap: var(--space-3xs);
 }
 
+.card time {
+  font-size: var(--step--1);
+}
+
 .email:before {
   content: 'thoravaltristan@gmail.com';
 }
@@ -524,6 +538,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  --space: var(--space-s);
 }
 
 .flow > * {
@@ -540,12 +555,6 @@ section {
 
 .space-between {
   justify-content: space-between;
-}
-
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /* A11Y */

@@ -1,16 +1,29 @@
 ---
 import Layout from "@layouts/Default.astro";
-import ErrorPage  from "@components/errors/404.astro";
 ---
 
 <Layout
 	title="Error 404"
-	pageTitle="Error 404"
+	pageTitle="Error 404 | Tristan Thoraval"
 	description=""
 >
 	<main id="main">
-		<div>
-			<ErrorPage />
-		</div>
+		<section>
+			<a
+				href="/"
+				title="Go back home"
+				>&larr; Go Home</a
+			>
+			<p>404</p>
+			<h2>Page Not Found</h2>
+			<p>
+				Sorry, we couldn't find the page you were looking for.
+			</p>
+			<a
+				href="/"
+				title="Go back home"
+				>&larr; Go Home</a
+			>
+		</section>
 	</main>
 </Layout>
